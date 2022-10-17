@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 function SidebarList(props) {
-  const activeLink = "text-white p-2 rounded-lg";
+  const activeLink = " bg-white/30 text-white p-2 rounded-lg";
   const normalLink = "p-2";
 
   return (
@@ -18,7 +18,7 @@ function SidebarList(props) {
           >
             {props.icon}
             <div className="inline-block">
-              <span className="invisible group-hover:visible absolute h-0 w-0 border-y-8 -bottom-0 left-11 border-y-transparent border-r-8 border-r-black/50 z-0"></span>
+              <span className="invisible group-hover:visible absolute h-0 w-0 border-y-8 -bottom-0 left-11 border-y-transparent border-r-8 backdrop-blur-md border-r-black/50 whitespace-nowrap"></span>
               <span className="invisible group-hover:visible absolute -bottom-2 left-12 backdrop-blur-md bg-black/50 p-1 pr-2 pl-2 font-semibold whitespace-nowrap rounded">{props.menu}</span>
             </div>
           </div>
