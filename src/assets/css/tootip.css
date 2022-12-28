@@ -1,0 +1,7 @@
+.tooltip-arrow {
+  @apply h-0 w-0 border-y-8 -bottom-0 left-12 border-y-transparent border-r-8 backdrop-blur-md border-r-black/50 whitespace-nowrap;
+}
+
+.tooltip-sidebar{
+  @apply -bottom-2 left-14 backdrop-blur-md bg-black/50 p-1 pr-2 pl-2 font-semibold whitespace-nowrap rounded;
+}

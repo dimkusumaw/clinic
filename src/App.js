@@ -1,21 +1,16 @@
-import { useEffect } from "react";
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
-import Header from "./components/Layout/Header";
-import Sidebar from "./components/Layout/Sidebar";
-import Router from "./routes";
-
+import Login from "./pages/Login";
+import Menus from "./pages/Menus";
 function App() {
-  useEffect(() => {
-    
-  })
+  const Auth = useSelector(state => state.auth.isLogin)
+
   return (
-    <div className="w-full flex flex-row">
-      <Sidebar />
-      <div className="w-full flex flex-col">
-        <Header />
-        <Router />
-      </div>
-    </div>
+    <Fragment>
+      {Auth && <Menus />}
+      {!Auth && <Login />}
+    </Fragment>
   );
 }
 
