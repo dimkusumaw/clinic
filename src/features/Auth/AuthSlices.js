@@ -13,8 +13,7 @@ const initialState = {
   isError: false,
 };
 
-const loginURL =
-  "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAIgb1svPl8tgHq0kqnwqWsW9Mp_a57iTI";
+const loginURL = process.env.FIREBASE_LOGIN_URL
 
 export const login = createAsyncThunk("user/login", async (payload) => {
   try {
