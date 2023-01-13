@@ -7,32 +7,34 @@ import { login } from "../features/Auth/AuthSlices";
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   
   const handleSubmit = () => {
-    dispatch(login({ email: email, password: password }));
-    navigate('/dashboard')
+    dispatch(login({ identifier: identifier, password: password }));
+    navigate('dashboard')
   };
 
   return (
     <div className="flex bg-gray-100 items-center justify-center align-middle h-screen">
-      <div className="bg-white rounded-xl shadow-xl p-6 w-1/4">
+      <div className="bg-white rounded-xl shadow-xl md:p-6 p-2 md:w-1/3 w-3/4">
         <h1 className="text-2xl text-center">LOGIN</h1>
         <form className="mt-2">
           <LoginField
-            className="m-5 mx-10"
-            label="Email"
+            className="md:m-5 md:mx-10 m-2"
+            label="Username"
             type="text"
-            placeholder="Enter Email"
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Username"
+            onChange={(e) => setIdentifier(e.target.value)}
+            value={identifier}
           />
           <LoginField
-            className="m-5 mx-10"
+            className="md:m-5 md:mx-10 m-2"
             label="Password"
             type="password"
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
         </form>
         <div className="flex justify-center mx-10 my-5">

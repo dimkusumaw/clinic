@@ -3,18 +3,18 @@ import { NavLink } from "react-router-dom";
 import "../../assets/css/tootip.css"
 
 function SidebarList(props) {
-  const activeLink = " bg-white/30 text-white p-2 rounded-lg";
-  const normalLink = "p-2";
+  const activeLink = "bg-white/30 text-white p-3 rounded-lg w-10";
+  const normalLink = "p-3 w-10";
 
   return (
     <Fragment>
-      <li className="mt-2 flex items-center rounded-xl">
+      <li className="mt-1 flex items-center rounded-xl">
         <NavLink
           to={props.link}
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
           <div
-            className={`flex items-center relative group ${({ isActive }) =>
+            className={`flex justify-center relative group ${({ isActive }) =>
               isActive ? activeLink : normalLink}`}
           >
             {props.icon}
